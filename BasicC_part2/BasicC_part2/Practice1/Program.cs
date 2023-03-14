@@ -3,23 +3,26 @@ public class Program
 {
     private static void Main(string[] args)
     {
-        //Console.WriteLine("Problem 1");
-        //Problem1(2, 2);
+        Console.WriteLine("Problem 1");
+        Problem1(2, 2);
 
-        //Console.WriteLine("Problem 2");
-        //Problem2();
+        Console.WriteLine("Problem 2");
+        Problem2();
 
-        //Console.WriteLine("Problem 3");
-        //Problem3();
+        Console.WriteLine("Problem 3");
+        Problem3();
 
-        //Console.WriteLine("Problem 4");
-        //Problem4();
+        Console.WriteLine("Problem 4");
+        Problem4();
 
-       
+        Console.WriteLine("Problem 5");
+        Problem5();
 
+
+        // the diference between division and modulus(modulus = finding the rest of a division)
         int number = 5;
-        Console.WriteLine(number / 3);
-        Console.WriteLine(number % 3);
+        Console.WriteLine(number / 3);//division
+        Console.WriteLine(number % 3);//modulus
 
     }
 
@@ -40,7 +43,6 @@ public class Program
         {
             Console.WriteLine("The maximum is " + number2);
         }
-        //change to print if the numbers are equal
     }
 
     //
@@ -91,18 +93,16 @@ public class Program
 
     //
     // If we list all the natural numbers below 10 that are multiples of 3 or 5, we get 3, 5, 6 and 9.
-    // The sum of these multiples is 23.
-    // Find the sum of all the multiples of 3 or 5 below 100.
+    // The sum should be multiples is 23.
     //
     public static void Problem5()
     {
         var sum = 0;
-        for (int i = 11; i < 20; i++)
+        for (int i = 0; i < 10; i++) // i++ is equivalent i= i+1
         {
-            if (i % 3 == 0 && i % 5 == 0)
+            if (i % 3 == 0 || i % 5 == 0)
             {
-                sum += i; /// sum = sum+ i;
-                //i++  // i= i+1
+                sum += i; //is equivalent to  sum = sum+ i;                
             }
         }
         Console.WriteLine(sum);

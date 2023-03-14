@@ -1,7 +1,7 @@
 ﻿internal class Program
 {
     private static void Main(string[] args)
-    {/*
+    {
         int number = 190;
         var stringNumber = number.ToString();
         Console.WriteLine(stringNumber + " is my number.");
@@ -9,22 +9,20 @@
         int[] array = new int[] { 8, 15, 7, 10, 33, 4, 9 };
         Console.WriteLine("Length " + array.Length);
         Console.WriteLine("Max " + array.Max());
-        Console.WriteLine("Min " + array.Min()); 
-        Console.WriteLine();*
+        Console.WriteLine("Min " + array.Min());
+        Console.WriteLine(); 
 
         string hello = "hello world!";
-        string myString;
-
-        hello[0] = hello[0].ToString().ToUpper();
-
-
-        Console.WriteLine(myString);
+        Console.WriteLine(hello.ToUpper());
         Console.WriteLine(hello.ToLower());
+
+        hello = hello.Substring(0, 1).ToUpper() + hello.Substring(1, hello.Length - 1);
+        Console.WriteLine(hello);
         Console.WriteLine();
 
         Console.WriteLine("ConvertNumberToString");
         ConvertNumberToString();
-        Console.WriteLine();*/
+        Console.WriteLine();
 
         Console.WriteLine("ConvertStringToNumber");
         ConvertStringToNumber();
@@ -43,28 +41,27 @@
     {
         string number1 = "12";
         string number2 = "10.56";
-        /*
+
         try
         {
             int numVal1 = int.Parse(number1);
+            Console.WriteLine("Int " + numVal1);
         }
         catch (Exception e)
         {
             Console.WriteLine(e.Message);
         }
 
-        try { 
-        decimal numVal2 = Decimal.Parse(number2);
-           // bool.tr
+        try {
+            decimal numVal2 = Decimal.Parse(number2);
 
-            Console.WriteLine("Int " + numVal1);
             Console.WriteLine("Decimal " + numVal2);
         }
         catch (Exception e)
         {
             Console.WriteLine(e.Message);
         }
-        Console.WriteLine();*/
+        Console.WriteLine();
 
 
 

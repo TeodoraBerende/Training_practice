@@ -3,14 +3,22 @@ public class Program
 {
     private static void Main(string[] args)
     {
-       
+        Console.WriteLine("Problem 1");
+        Problem1();
+
+        Console.WriteLine("Problem 2");
+        Problem2();
+
+        Console.WriteLine("Problem 3");
+        Problem3(17);
 
         Console.WriteLine("Problem 4");
-        Problem4();
+        Problem4();       
     }
 
     //
     // Find sum of natural numbers from 1 to 10.
+    // It should have been the sum but if I let it like this you can play with the difference between while and do-while. (Problem 1 and 2)
     //
     public static void Problem1()
     {
@@ -26,9 +34,25 @@ public class Program
     }
 
     //
+    // Find sum of natural numbers from 1 to 10 using do-while.
+    //
+    public static void Problem2()
+    {
+        int sum = 0;
+        int n = 1;
+        do
+        {
+            sum = sum + n;
+            n++;
+
+        } while (n < 0);
+    }
+
+
+    //
     // Convert Decimal to Binary number system
     //
-    public static void Problem2(int number)
+    public static void Problem3(int number)
     {
         int binary =  0;
         int temp = 1;    
@@ -52,24 +76,7 @@ public class Program
         Console.WriteLine(binary);
     }
 
-    //
-    // Find sum of natural numbers from 1 to 10 using do-while.
-    //
-    public static void Problem3()
-    {
-        int sum = 0;
-        int n = 1;
-        do
-        {
-            sum = sum + n;
-            n++;
-
-        } while (n < 0);
-
-
-
-    }
-
+    
     //
     // If we list all the natural numbers below 10 that are multiples of 3 or 5, we get 3, 5, 6 and 9.
     // The sum of these multiples is 23.
@@ -83,25 +90,25 @@ public class Program
         {
             if (i % 3 == 0 || i % 5 == 0)
             {
-                sum += i; /// sum = sum+ i;
-                //i++  // i= i+1
+                sum += i; 
             }
             i++;
         }
 
         Console.WriteLine(sum);
         
-
-
     }
 
     /*
-     * public static void Problem5()
+     public static void Problem5()
     {
         var sum = 0;
-        for (int i = 0; ; i++)
+        for (int i = 0; i < 10; i++) // i++ is equivalent i= i+1
         {
-           
+            if (i % 3 == 0 || i % 5 == 0)
+            {
+                sum += i; //is equivalent to  sum = sum+ i;                
+            }
         }
         Console.WriteLine(sum);
     }
