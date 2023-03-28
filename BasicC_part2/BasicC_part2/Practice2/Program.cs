@@ -3,17 +3,17 @@ public class Program
 {
     private static void Main(string[] args)
     {
-        Console.WriteLine("Problem 1");
-        Problem1();
+        //Console.WriteLine("Problem 1");
+        //Problem1();
 
-        Console.WriteLine("Problem 2");
-        Problem2();
+        //Console.WriteLine("Problem 2");
+        //Problem2();
 
         Console.WriteLine("Problem 3");
-        Problem3(17);
+        Problem3(-5);
 
-        Console.WriteLine("Problem 4");
-        Problem4();       
+        //Console.WriteLine("Problem 4");
+        //Problem4();       
     }
 
     //
@@ -54,6 +54,12 @@ public class Program
     //
     public static void Problem3(int number)
     {
+        if(number<0)
+        {
+            Console.WriteLine("Please give a positive number.");
+            return;
+        }
+
         int binary =  0;
         int temp = 1;    
 

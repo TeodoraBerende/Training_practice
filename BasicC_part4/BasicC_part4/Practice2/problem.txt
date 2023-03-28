@@ -1,0 +1,9 @@
+﻿
+Create a program that works with complex numbers (a + bi).
+The program should contain an array of complex numbers and be able to do the next actions: 
+
+1. Add a new number to the end of the array.
+
+2. Delete an element from a given position.
+
+3. Print the imaginary part for the all numbers from the array.
