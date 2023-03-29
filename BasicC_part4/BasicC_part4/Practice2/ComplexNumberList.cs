@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -11,13 +12,25 @@ namespace Practice2
         public ComplexNumber[] MyComplexNumberArray { get; set; }
         public List<ComplexNumber> MyComplexNumberList { get; set;}
 
+        private int myArraySize;
+
         public ComplexNumberList()
         {
             var complexNumber1 = new ComplexNumber(1, 2);
             var complexNumber2 = new ComplexNumber(4, 6);
             var complexNumber3 = new ComplexNumber(7, 9);
 
-            MyComplexNumberArray = new ComplexNumber[] {complexNumber1, complexNumber2 , complexNumber3 };
+            //initialize the length of the array
+            myArraySize = 4;
+
+            //initialize array with the corresponfing size
+            MyComplexNumberArray = new ComplexNumber[myArraySize];
+
+            //initialize array with elements
+            MyComplexNumberArray[0] = complexNumber1;
+            MyComplexNumberArray[1] = complexNumber2;
+            MyComplexNumberArray[2] = complexNumber3;
+
             MyComplexNumberList = new List<ComplexNumber> { complexNumber1, complexNumber2, complexNumber3 };
         }
 
@@ -25,16 +38,31 @@ namespace Practice2
         {
             MyComplexNumberList.Add(complexNumber);
 
-            var size = MyComplexNumberArray.Length;
-            size = size + 1;
-
-            ComplexNumber[] myNewArray = new ComplexNumber[size];
-            for(int i = 0; i< MyComplexNumberArray.Length; i++)
+            //Check if the number of elements is less than the assigned length of the array. If yes, add the element
+            if ( MyComplexNumberArray.Count() < myArraySize)
             {
-                myNewArray[i] = MyComplexNumberArray[i];
+                MyComplexNumberArray[MyComplexNumberArray.Count()] = complexNumber;
             }
-            myNewArray[size - 1] = complexNumber;
-            MyComplexNumberArray = myNewArray;
+            else
+            {
+                //double the size of the array
+                myArraySize = myArraySize * 2;
+
+                //create a new array with the new size
+                ComplexNumber[] myNewArray = new ComplexNumber[myArraySize];
+
+                //copy elements from the old array to the new one
+                for (int i = 0; i < MyComplexNumberArray.Length; i++)
+                {
+                    myNewArray[i] = MyComplexNumberArray[i];
+                }
+
+                //add the new element
+                myNewArray[myNewArray.Count()] = complexNumber;
+
+                //Initialize the old array with the new one
+                MyComplexNumberArray = myNewArray;
+            }
         }
 
         public void DeleteFromPosition(int position)
