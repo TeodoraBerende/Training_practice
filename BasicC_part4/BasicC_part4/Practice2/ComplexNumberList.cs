@@ -13,6 +13,7 @@ namespace Practice2
         public List<ComplexNumber> MyComplexNumberList { get; set;}
 
         private int myArraySize;
+        private int myElementsNumber;
 
         public ComplexNumberList()
         {
@@ -31,6 +32,8 @@ namespace Practice2
             MyComplexNumberArray[1] = complexNumber2;
             MyComplexNumberArray[2] = complexNumber3;
 
+            myElementsNumber = 3;
+
             MyComplexNumberList = new List<ComplexNumber> { complexNumber1, complexNumber2, complexNumber3 };
         }
 
@@ -39,9 +42,10 @@ namespace Practice2
             MyComplexNumberList.Add(complexNumber);
 
             //Check if the number of elements is less than the assigned length of the array. If yes, add the element
-            if ( MyComplexNumberArray.Count() < myArraySize)
+            if (myElementsNumber < myArraySize)
             {
-                MyComplexNumberArray[MyComplexNumberArray.Count()] = complexNumber;
+                MyComplexNumberArray[myElementsNumber] = complexNumber;
+                myElementsNumber++;
             }
             else
             {
@@ -58,7 +62,8 @@ namespace Practice2
                 }
 
                 //add the new element
-                myNewArray[myNewArray.Count()] = complexNumber;
+                myNewArray[myElementsNumber] = complexNumber;
+                myElementsNumber++;
 
                 //Initialize the old array with the new one
                 MyComplexNumberArray = myNewArray;
