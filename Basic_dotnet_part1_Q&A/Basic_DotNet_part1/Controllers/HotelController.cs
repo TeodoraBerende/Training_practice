@@ -61,13 +61,12 @@ namespace WebApplication1.Controllers
         }
 
         // Update a specific hotel
-
         [HttpPut]
         public async Task<IActionResult> UpdateHotel(int hotelId, [FromBody] Hotel hotelUpdated)
         {
             var hotel = await _dbContext.Hotels.FirstOrDefaultAsync(h => h.Id == hotelId);
 
-            // check if the hotel is not null
+            // check if the hotel is null and return Not found
             if (hotel is null) // hotel == null
             {
                 return NotFound($"The hotel with id {hotelId} does not exists.");
@@ -89,7 +88,7 @@ namespace WebApplication1.Controllers
         {
             var hotel = await _dbContext.Hotels.FirstOrDefaultAsync(h => h.Id == hotelId);
 
-            // check if the hotel is not null
+            // check if the hotel is null and return Not found
             if (hotel is null) // hotel == null
             {
                 return NotFound($"The hotel with id {hotelId} does not exists.");
@@ -100,7 +99,5 @@ namespace WebApplication1.Controllers
 
             return NoContent();
         }
-
-
     }
 }
